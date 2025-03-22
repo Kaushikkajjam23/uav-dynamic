@@ -1,3 +1,75 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>UAV Path Planning Simulation</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="p5.js"></script>
+    <script src="sketch.js"></script>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #mapCanvas {
+        border: 1px solid black;
+        margin-bottom: 10px;
+        width: 800px;
+        height: 600px;
+      }
+
+      #controls {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      #comments {
+        text-align: center;
+      }
+      .start-icon {
+            background: green;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .goal-icon {
+            background: red;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>UAV Path Planning Simulation</h1>
+    <div id="mapCanvasContainer">
+      <div id="mapCanvas"></div>
+    </div>
+    <div id="controls">
+      <label for="startX">Start Lat:</label>
+      <input type="number" id="startLat" value="17.3501895" />
+      <label for="startY">Start Lng:</label>
+      <input type="number" id="startLng" value="78.5473822" />
+      <label for="goalX">Goal Lat:</label>
+      <input type="number" id="goalLat" value="17.4000" />
+      <label for="goalY">Goal Lng:</label>
+      <input type="number" id="goalLng" value="78.6000" />
+      <button onclick="planPath()">Plan Path</button>
+    </div>
+    <div id="comments"></div>
+    <main></main>
+  </body>
+</html> -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,13 +82,13 @@
     <h1>UAV Path Planning Simulation</h1>
     <div>
       <label for="startX">Start X:</label>
-      <input type="number" id="startX" value="5" />
+      <input type="number" id="startX" value="100" />
       <label for="startY">Start Y:</label>
-      <input type="number" id="startY" value="5" />
+      <input type="number" id="startY" value="100" />
       <label for="goalX">Goal X:</label>
-      <input type="number" id="goalX" value="95" />
+      <input type="number" id="goalX" value="700" />
       <label for="goalY">Goal Y:</label>
-      <input type="number" id="goalY" value="95" />
+      <input type="number" id="goalY" value="500" />
       <button onclick="planPath()">Plan Path</button>
     </div>
     <main></main>

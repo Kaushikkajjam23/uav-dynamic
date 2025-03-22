@@ -34,64 +34,64 @@ function setup() {
   createCanvas(800, 600);
 }
 
-// function draw() {
-//   background(220);
-//   //move Obstacles around , ensure it does not collide
-//   moveDynamicObstacles();
-
-//   // Draw obstacles
-//   for (let obs of obstacles) {
-//     if (obs.type === "circle") {
-//       ellipse(obs.x, obs.y, 2 * obs.radius);
-//     } else if (obs.type === "rectangle") {
-//       rect(obs.x, obs.y, obs.width, obs.height);
-//     }
-//   }
-//   //Draw dynamic obstacle
-//   for (let obs of dynamic_obstacles) {
-//     ellipse(obs.x, obs.y, 2 * obs.radius);
-//   }
-
-//   // Draw path
-//   beginShape();
-//   noFill();
-//   stroke(0, 0, 255); // Blue color
-//   strokeWeight(2);
-//   for (let point of path) {
-//     vertex(point[0], point[1]);
-//   }
-//   endShape();
-
-//   // Draw start and goal (replace with UI elements)
-//   fill(0, 255, 0); // Green color
-//   ellipse(
-//     document.getElementById("startX").value,
-//     document.getElementById("startY").value,
-//     20
-//   ); //start x and y
-//   fill(255, 0, 0); // Red color
-//   ellipse(
-//     document.getElementById("goalX").value,
-//     document.getElementById("goalY").value,
-//     20
-//   ); //end xy
-//   //Dynamic Replanning
-//   if (frameCount % 30 == 0) {
-//     planPath();
-//   }
-// }
 function draw() {
   background(220);
-  //Move Obstacles around , ensure it does not collide
+  //move Obstacles around , ensure it does not collide
   moveDynamicObstacles();
 
-  // Draw Dynamic Obstacles
-  for (let obs of dynamic_obstacles) {
-    ellipse(obs.x, obs.y, 2 * obs.radius); // Drawing dynamic obstacles
+  // Draw obstacles
+  for (let obs of obstacles) {
+    if (obs.type === "circle") {
+      ellipse(obs.x, obs.y, 2 * obs.radius);
+    } else if (obs.type === "rectangle") {
+      rect(obs.x, obs.y, obs.width, obs.height);
+    }
   }
-  //Test Pause here to see it works , comment rest if you need it.
-  noLoop();
+  //Draw dynamic obstacle
+  for (let obs of dynamic_obstacles) {
+    ellipse(obs.x, obs.y, 2 * obs.radius);
+  }
+
+  // Draw path
+  beginShape();
+  noFill();
+  stroke(0, 0, 255); // Blue color
+  strokeWeight(2);
+  for (let point of path) {
+    vertex(point[0], point[1]);
+  }
+  endShape();
+
+  // Draw start and goal (replace with UI elements)
+  fill(0, 255, 0); // Green color
+  ellipse(
+    document.getElementById("startX").value,
+    document.getElementById("startY").value,
+    20
+  ); //start x and y
+  fill(255, 0, 0); // Red color
+  ellipse(
+    document.getElementById("goalX").value,
+    document.getElementById("goalY").value,
+    20
+  ); //end xy
+  //Dynamic Replanning
+  if (frameCount % 30 == 0) {
+    planPath();
+  }
 }
+// function draw() {
+//   background(220);
+//   //Move Obstacles around , ensure it does not collide
+//   moveDynamicObstacles();
+
+//   // Draw Dynamic Obstacles
+//   for (let obs of dynamic_obstacles) {
+//     ellipse(obs.x, obs.y, 2 * obs.radius); // Drawing dynamic obstacles
+//   }
+//   //Test Pause here to see it works , comment rest if you need it.
+//   noLoop();
+// }
 function planPath() {
   let startX = document.getElementById("startX").value;
   let startY = document.getElementById("startY").value;
